@@ -24,4 +24,8 @@ public class StudentController {
         return  studentService.getAllStudents();
     }
 
+
+    
+
+
 }
