@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StudentService } from 'src/app/services/student.service';
 import { Student } from 'src/app/student';
 
@@ -11,7 +12,7 @@ export class StudentListComponent implements OnInit {
 
   studentsArr!:Student[]
 
-  constructor(private studentService:StudentService) { }
+  constructor(private studentService:StudentService , private router:Router) { }
 
   ngOnInit(): void {
     this.getStudents();
@@ -21,5 +22,13 @@ private getStudents(){
     this.studentsArr=data
   })
 }
+
+
+updatStudent(id:number){
+this.router.navigate(["update-student",id])
+}
+
+
+
 
 }
