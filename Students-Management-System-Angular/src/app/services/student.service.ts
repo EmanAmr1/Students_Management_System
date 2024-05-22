@@ -8,7 +8,8 @@ import { Student } from '../student';
 })
 export class StudentService {
 
-  private baseURL="http://localhost:8080/api/v1/allStudents"
+  private baseURL="http://localhost:8080/api/v1/allStudents";
+  private createStudentUrl="http://localhost:8080/api/v1/createStudent";
   constructor(private httpClient:HttpClient) {   }
 
   getStudentsList():Observable<Student[]>{
@@ -16,5 +17,8 @@ export class StudentService {
 
   }
 
+  createStudent(student:Student):Observable<Object>{
+    return this.httpClient.post(`${this.createStudentUrl}`,student);
+  }
 
   }
