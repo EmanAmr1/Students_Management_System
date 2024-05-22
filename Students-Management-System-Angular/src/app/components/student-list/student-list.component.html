@@ -1,0 +1,23 @@
+<h2>Students List</h2>
+
+<table class="table table-striped">
+  <thead>
+
+    <tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let Student of studentsArr">
+
+<td>{{Student.firstName}}</td>
+<td>{{Student.lastName}}</td>
+<td>{{Student.emailId}}</td>
+
+    </tr>
+  </tbody>
+</table>
