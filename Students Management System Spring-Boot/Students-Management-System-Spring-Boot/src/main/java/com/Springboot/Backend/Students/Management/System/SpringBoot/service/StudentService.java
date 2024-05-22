@@ -33,5 +33,19 @@ public class StudentService {
       return ResponseEntity.ok(student);
    }
 
+   //update Student
+   public ResponseEntity<Student> updateStudent(Long id ,Student studentDetails){
+      Student student= studentRepository.findById(id).orElseThrow(() ->
+              new ResourceNotFoundException("Student not exist with id: " + id));
+
+      student.setFirstName(studentDetails.getFirstName());
+      student.setLastName(studentDetails.getLastName());
+      student.setEmailId(studentDetails.getEmailId());
+
+      Student updatedStuent = studentRepository.save(student);
+      return ResponseEntity.ok(updatedStuent);
+
+
+   }
 
 }
