@@ -3,6 +3,7 @@ package com.Springboot.Backend.Students.Management.System.SpringBoot.controller;
 import com.Springboot.Backend.Students.Management.System.SpringBoot.model.Student;
 import com.Springboot.Backend.Students.Management.System.SpringBoot.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,5 +28,9 @@ public class StudentController {
         return studentService.createStudent(student);
     }
 
+    @GetMapping("/getStudent/{id}")
+    public ResponseEntity<Student> getStudent(@PathVariable Long id){
+        return studentService.getStudentById(id);
+    }
 
 }
