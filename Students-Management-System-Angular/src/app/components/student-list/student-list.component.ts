@@ -29,6 +29,9 @@ this.router.navigate(["update-student",id])
 }
 
 
-
+deleteStudent(id:number){
+  this.studentService.deleteStudentById(id).subscribe(data=>{ console.log(data) ;
+    this.getStudents()});
+}
 
 }

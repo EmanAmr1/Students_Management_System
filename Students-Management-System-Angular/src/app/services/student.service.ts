@@ -12,6 +12,8 @@ export class StudentService {
   private createStudentUrl="http://localhost:8080/api/v1/createStudent";
   private updateStudentUrl="http://localhost:8080/api/v1/updateStudent";
   private gettudentUrl="http://localhost:8080/api/v1/getStudent";
+  private deleteStudentUrl="http://localhost:8080/api/v1/DeleteStudent";
+
   constructor(private httpClient:HttpClient) {   }
 
   getStudentsList():Observable<Student[]>{
@@ -34,4 +36,8 @@ export class StudentService {
   }
 
 
+  deleteStudentById(id:number):Observable<Object>{
+    return this.httpClient.delete(`${this.deleteStudentUrl}/${id}`)
+
+  }
   }

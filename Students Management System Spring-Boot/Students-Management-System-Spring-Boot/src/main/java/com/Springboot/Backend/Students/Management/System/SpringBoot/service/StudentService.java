@@ -4,10 +4,13 @@ import com.Springboot.Backend.Students.Management.System.SpringBoot.exception.Re
 import com.Springboot.Backend.Students.Management.System.SpringBoot.model.Student;
 import com.Springboot.Backend.Students.Management.System.SpringBoot.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.mail.MailProperties;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class StudentService {
@@ -51,6 +54,20 @@ public class StudentService {
 
    public void deleteStudentById(Long id){
       studentRepository.deleteById(id);
+   }
+
+
+   public ResponseEntity<Map<String,Boolean>> deleteStudent(Long id){
+
+      Student student= studentRepository.findById(id).orElseThrow(() ->
+              new ResourceNotFoundException("Student not exist with id: " + id));
+
+      studentRepository.delete(student);
+
+      Map<String,Boolean> response =new HashMap<>();
+      response.put("deleted",Boolean.TRUE);
+
+      return ResponseEntity.ok(response);
    }
 
 }
