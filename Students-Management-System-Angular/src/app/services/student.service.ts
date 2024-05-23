@@ -26,8 +26,12 @@ export class StudentService {
 
   getStudentById(id:number):Observable<Student>{
     return this.httpClient.get<Student>(`${this.gettudentUrl}/${id}`);
-
-
   }
+
+
+  updateStudent(id:number,student:Student):Observable<object>{
+    return this.httpClient.put(`${this.updateStudentUrl}/${id}`,student);
+  }
+
 
   }

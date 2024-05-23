@@ -3,20 +3,22 @@
   <form (ngSubmit)="onSubmit()">
     <div class="mb-3">
       <label for="firstName" class="form-label">First Name</label>
-      <input type="text" class="form-control" id="firstName" [(ngModel)]="student.firstName" name="firstName" style="width:550px;">
+      <input type="text" class="form-control" id="firstName" [(ngModel)]="student.firstName" name="firstName"
+        style="width:550px;">
     </div>
 
     <div class="mb-3">
       <label for="lastName" class="form-label">Last Name</label>
-      <input type="text" class="form-control" id="lastName" [(ngModel)]="student.lastName" name="lastName" style="width:550px;" >
+      <input type="text" class="form-control" id="lastName" [(ngModel)]="student.lastName" name="lastName"
+        style="width:550px;">
     </div>
 
     <div class="mb-3">
       <label for="emailId" class="form-label">Email</label>
-      <input type="text" class="form-control" id="emailId" [(ngModel)]="student.emailId" name="emailId" style="width:550px;" >
+      <input type="text" class="form-control" id="emailId" [(ngModel)]="student.emailId" name="emailId"
+        style="width:550px;">
     </div>
 
     <button class="btn btn-primary" type="submit">Update Student</button>
   </form>
 </div>
-
