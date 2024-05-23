@@ -18,7 +18,9 @@
       <td>{{Student.emailId}}</td>
       <td>
         <button (click)="updatStudent(Student.id)" class="btn btn-info"> Update</button>
+        <button (click)="goToStudentDetails(Student.id)" class="btn btn-success mx-2"> View</button>
         <button (click)="deleteStudent(Student.id)" class="btn btn-danger mx-2"> Delete</button>
+
       </td>
 
     </tr>

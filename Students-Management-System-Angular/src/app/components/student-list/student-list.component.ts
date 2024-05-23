@@ -34,4 +34,14 @@ deleteStudent(id:number){
     this.getStudents()});
 }
 
+goToStudentDetails(id:number){
+  this.router.navigate(["student-details",id])
+}
+
+detailsStudent(id:number){
+this.studentService.getStudentById(id).subscribe(data=>{
+
+})
+
+}
 }

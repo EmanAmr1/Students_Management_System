@@ -7,13 +7,15 @@ import { StudentListComponent } from './components/student-list/student-list.com
 import { CreateStudentComponent } from './components/create-student/create-student.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateStudentComponent } from './components/update-student/update-student.component';
+import { StudentDetailsComponent } from './components/student-details/student-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
     CreateStudentComponent,
-    UpdateStudentComponent
+    UpdateStudentComponent,
+    StudentDetailsComponent
   ],
   imports: [
     BrowserModule,
